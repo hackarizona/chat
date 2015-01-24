@@ -9,7 +9,7 @@ server.listen(port, function () {
 });
 app.use(express.static(__dirname + '/public'));
 var usernames = {};
-var numUsers = 0;
+var numUsers = 0; 
 
 io.on('connection', function (socket) {
   var addedUser = false;
