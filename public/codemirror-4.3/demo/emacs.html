@@ -1,0 +1,33 @@
+<!doctype html>
+
+<title>Codechecker</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../doc/docs.css">
+<link rel="stylesheet" href="../addon/dialog/dialog.css">
+<link rel="stylesheet" href="../lib/codemirror.css">
+<script src="../lib/codemirror.js"></script>
+<script src="../mode/clike/clike.js"></script>
+<script src="../keymap/emacs.js"></script>
+<style type="text/css">
+      .CodeMirror {border-top: 1px solid #eee; border-bottom: 1px solid #eee;}
+    </style>
+<article>
+<h2>Enter Code here</h2>
+<form><textarea id="code" name="code">
+  #include<iostream>
+</textarea></form>
+  <script>
+
+      CodeMirror.commands.save = function() {
+        var elt = editor.getWrapperElement();
+        elt.style.background = "#def";
+        setTimeout(function() { elt.style.background = ""; }, 300);
+      };
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        mode: "text/x-csrc",
+        keyMap: "emacs"
+      });
+    </script>
+
+</article>
