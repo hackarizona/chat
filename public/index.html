@@ -41,7 +41,7 @@
           <input type="button" id="showCod" value="Submit Code" onclick='showCode()' />
           <input type="button" id="clearCod" value="Clear Code" onclick='clearCode()' />
         </div>
-        <input type="button" id="addCodeButton" value="Add Code" />
+        <!-- <input type="button" id="addCodeButton" value="Add Code" /> -->
         <input class="inputMessage" id="iparea" placeholder="Type here..."/>
       </li>
       <li class="login page">
@@ -55,35 +55,6 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/main.js"></script>
-    <script>
-      CodeMirror.commands.save=function(){
-      var elt=editor.getWrapperElement();
-      elt.style.background="#def";
-      setTimeout(function(){elt.style.background="";},300);
-      }
-      var editor=CodeMirror.fromTextArea(document.getElementById("code"),{
-      lineNumbers: true,
-      mode: "text/x-csrc",
-      });
-      function setLanguage(lang,dispLang){
-      editor.setOption("mode",lang);
-      CodeMirror.autoLoadMode(editor,lang);
-      }
-
-      function showCode()
-{
-    var text = editor.getValue();
-    document.getElementById('iparea').value=text;
-    alert(text);
-}
-      function clearCode()
-{
-    var text = editor.getValue();
-    document.getElementById('code').value="";
-    alert(text);
-}
     
-</script>
-    </script>
   </body>
 </html>
